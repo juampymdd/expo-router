@@ -1,50 +1,55 @@
-# Welcome to your Expo app 👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
-## Get started
+# Expo Navigation App
 
-1. Install dependencies
+Este proyecto es parte del curso de **React Native + Expo** de Fernando Herrera.
 
-   ```bash
-   npm install
-   ```
+Es una app de ejemplo creada con Expo, React Native, NativeWind y Expo Router. Permite navegar entre productos y ver detalles individuales, usando rutas dinámicas y fuentes personalizadas.
 
-2. Start the app
+## Características principales
 
-   ```bash
-   npx expo start
-   ```
+- Navegación con Expo Router (incluye rutas dinámicas como `/products/[id]`)
+- Fuentes personalizadas (Work Sans en varios grosores)
+- Estilos con Tailwind CSS y NativeWind
+- Tipos de color personalizados en Tailwind (`primary`, `secondary`, `tertiary`)
+- Ejemplo de store local de productos
 
-In the output, you'll find options to open the app in a
+## Estructura del proyecto
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+app/
+  _layout.tsx         # Layout principal y carga de fuentes
+  index.tsx           # Redirección a /products/index
+  (stack)/products/
+    index.tsx         # Listado de productos
+    [id].tsx          # Detalle de producto
+assets/
+  fonts/              # Fuentes Work Sans
+  images/             # Imágenes y logos
+store/
+  products.store.ts   # Store local de productos
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Instalación y uso
 
-## Learn more
+1. Instala dependencias:
+   ```sh
+   npm install
+   ```
+2. Inicia el proyecto:
+   ```sh
+   npx expo start
+   ```
+3. Escanea el QR con la app Expo Go o ejecuta en un emulador.
 
-To learn more about developing your project with Expo, look at the following resources:
+## Personalización de estilos
+- Los colores y fuentes están configurados en `tailwind.config.js`.
+- Puedes usar clases como `text-primary`, `text-secondary`, `font-work-black`, etc.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Notas
+- Si agregas nuevas fuentes, recuerda cargarlas en `_layout.tsx` y declararlas en Tailwind.
+- Las rutas deben ser exactas en los componentes de navegación (`/products/index` en vez de `/products` si usas TypeScript estricto).
 
-## Join the community
+---
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Hecho con ❤️ usando Expo, React Native y NativeWind.
